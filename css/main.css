@@ -1,0 +1,103 @@
+/* Fonts*/
+
+
+@font-face {
+  font-family: 'Open-Sans';
+  src:url('../assets/fonts/OpenSans-Bold.ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Open-Sans';
+  src:url('../assets/fonts/OpenSans-BoldItalic.ttf');
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Open-Sans';
+  src:url('../assets/fonts/OpenSans-Light.ttf');
+  font-style: normal;
+  font-weight: lighter;
+}
+@font-face {
+  font-family: 'Open-Sans';
+  src:url('../assets/fonts/OpenSans-LightItalic.ttf');
+  font-style: italic;
+  font-weight: lighter;
+}
+
+
+body{
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #2e2e2e;
+}
+
+header{
+  width: 100%;
+  text-align: left;
+}
+
+.wrapper{
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.logo{
+  width: 30%;
+  min-width: 150px;
+  max-width: 260px;
+  height: auto;
+}
+
+.search-panel{
+  background: url('../assets/images/pattern.png') no-repeat;
+  background-position: top center;
+  background-size: cover;
+  padding: 10% 0 8% 0;
+}
+
+.icon{
+  width: 40%;
+  height: auto;
+  max-width: 280px;
+  padding-bottom: 30px;
+}
+
+.search-form{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#search-form input{
+  width: 80%;
+  max-width: 330px;
+}
+
+.submit-btn{
+}
+
+.content-img{
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#load-btn{
+  font-size: 1.3em;
+  padding: 5px 40px;
+  background: #e24420;
+  color:white;
+  border: 1px solid #dbdbdb;
+}
+
+footer{
+  margin-top: 20px;
+}
+
+footer .wrapper{
+  border-top: 1px solid #c2c2c2;
+}
