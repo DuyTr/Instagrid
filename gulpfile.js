@@ -18,7 +18,7 @@ gulp.task('compress-main-js', function(){
 gulp.task('compress-main-css', function(){
     gulp.src('css/*.css')
       .pipe(concat('main.min.css'))
-      // .pipe(minify())
+      .pipe(minify())
       .pipe(gulp.dest('build/css'))
 });
 
@@ -31,7 +31,7 @@ gulp.task('newbrowser', ['compress-main-css' , 'compress-main-js'], function() {
     });
     // call 2 tasks on change
     gulp.watch('js/*.js', ['compress-main-js']);
-   gulp.watch('css/*.css'), ['compress-main-css']);
+   gulp.watch('css/*.css', ['compress-main-css']);
 
 // make browser reload on change
    gulp.watch('js/*.js').on('change', browserSync.reload);
