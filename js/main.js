@@ -9,7 +9,6 @@ $('.loader').toggle(false);
     $('.image-list').empty();
 
     input = $('#hashname').val();
-    // var new_url ='';
      $.ajax({
         method: 'GET',
         url: 'https://api.instagram.com/v1/tags/'+input+'/media/recent?count=12&client_id=75418656075f4ec7924f19d986189d18',
