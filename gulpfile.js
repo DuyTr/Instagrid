@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'); // Load Gulp!
+var autoprefixer = require('gulp-autoprefixer');
 // Now that we've installed the uglify package
 // we can require it!
 
@@ -10,6 +11,9 @@ var sass = require('gulp-sass');
 gulp.task('scss', function () {
   gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
     .pipe(gulp.dest('./css'));
 });
 
