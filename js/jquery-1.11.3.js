@@ -10349,39 +10349,3 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
-
-$(function() {
-  $('#search-form').submit(function(event)  {
-    event.preventDefault();
-    $('.content-img').remove();
-    $('.image-list').empty();
-    var input = $('#hashname').val();
-     $.ajax({
-        method: 'GET',
-        url: 'https://api.instagram.com/v1/tags/'+input+'/media/recent?client_id=75418656075f4ec7924f19d986189d18',
-        dataType: "jsonp",
-        data:{
-          limit:
-          offset:
-
-        }
-
-     })
-     .done(function(results){
-         var imageItem='';
-         var result = results.data;
-         $.each(result, function( key, value ){
-           var cmt_count = value.comments.count;
-           var created_time = value.caption.created_time;
-           var img_link = value.images.standard_resolution.url;
-           var username = value.user.username;
-           var user_link = value.user.profile_picture;
-           imageItem += '<li>';
-           imageItem += username;
-           imageItem += '</li>';
-           console.log(key);
-        });
-      $('.image-list').append(imageItem);
-    });
-  });
-});
