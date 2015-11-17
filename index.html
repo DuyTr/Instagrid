@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
-  <body>
+  <body ng-app="instagrid" ng-controller="InstaCtrl">
     <header>
       <div>
         <a href="index.html"><img src="assets/images/instagrid-logo.svg" alt="Instagrid Logo" class="logo"></a>
@@ -15,25 +15,41 @@
     </header>
     <section class="search-panel">
       <img src="assets/images/instagrid-icon.svg" alt="Instagrid Icon" class="icon">
-      <form method="get" id="search-form">
-        <input type="text" name="hash-name" id="hashname" placeholder="Enter your search"/>
-        <button type="submit" class="submit_btn">
+      <form method="get" id="search-form"  >
+        <input ng-model="hashtag" type="text" name="hash-name" id="hashname" placeholder="Enter your search"/>
+        <button type="submit" class="submit_btn" ng-click="getPhotos($event)" >
                 <i class="fa fa-search"></i>
         </button>
       </form>
     </section>
     <section class="content">
-      <img src="assets/images/searchtags.svg" alt="Search #tag to View Image in the Grid" class="content-img"/>
+      <img src="assets/images/searchtags.svg" alt="Search #tag to View Image in the Grid" class="content-img" ng-hide="posts.length"/>
+      <div class="loader" ng-show="loading"></div>
       <div class="content-grid">
         <ul class="image-list">
+          <li class="abcd "ng-repeat="post in posts" ng-show="posts.length">
+            <a href='{{post.images.standard_resolution.url}}'>
+            <img ng-src='{{post.images.standard_resolution.url}}' class="img_photo"></a>
+            <div class="img_footer">
+              <img ng-src='{{post.user.profile_picture}}'>
+              <div class="img_info">
+                <span class="img_info1">
+                  {{post.user.username}}
+                </span>;
+                <span class="img_info2">
+                  <i class="fa fa-comment"></i>{{post.comments.count}}<i class="fa fa-heart"></i>{{post.likes.count}}
+                </span>
+              </div>
+            </div>
+          </li>
         </ul>
-        <div class="loader"></div>
       </div>
       <div class="content-load">
         <button type="button" id="load-btn">Load More</button>
       </div>
     </section>
     <footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
       <script src="js/jquery-1.11.3.js"></script>
       <script src="js/main.js"></script>
       <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
