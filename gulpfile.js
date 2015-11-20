@@ -2,9 +2,8 @@
 
 var gulp = require('gulp'); // Load Gulp!
 var autoprefixer = require('gulp-autoprefixer');
-// Now that we've installed the uglify package
-// we can require it!
-
+var minifyCSS = require('gulp-minify-css');
+var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 
@@ -14,7 +13,10 @@ gulp.task('scss', function () {
     .pipe(autoprefixer({
          browsers: ['last 2 versions']
       }))
-    .pipe(gulp.dest('./css'));
+      .pipe(gulp.dest('./'))
+      .pipe(minifyCSS())
+      .pipe(rename('main.min.css'))
+      .pipe(gulp.dest('./build/css'));
 });
 
 
@@ -25,9 +27,6 @@ gulp.task('newbrowser', function() {
             baseDir: "./"
         }
     });
-  //   // call 2 tasks on change
-  //   gulp.watch('js/*.js', ['compress-main-js']);
-  //  gulp.watch('css/*.css', ['compress-main-css']);
 
 // make browser reload on change
    gulp.watch('./scss/**/*.scss', ['scss']);

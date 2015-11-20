@@ -13,7 +13,6 @@ $('.loader').toggle(false);
         method: 'GET',
         url: 'https://api.instagram.com/v1/tags/'+input+'/media/recent?count=12&client_id=75418656075f4ec7924f19d986189d18',
         dataType: "jsonp",
-        // jsonpCallback: ''
 
      })
      .done(function(results){
