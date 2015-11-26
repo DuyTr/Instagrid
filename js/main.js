@@ -106,5 +106,7 @@ $('.content').on('click', '#load-btn', function(event) {
   }
   else {alert('No More Image With This Tag');}
   }); //finish #loadmore
+
+  
    $('.fancybox').fancybox();
 });

@@ -1,25 +1,25 @@
 
 @font-face {
   font-family: 'Open-Sans';
-  src:url('../assets/fonts/OpenSans-Bold.ttf');
+  src:url('../../assets/fonts/OpenSans-Bold.ttf');
   font-style: normal;
   font-weight: bold;
 }
 @font-face {
   font-family: 'Open-Sans';
-  src:url('../assets/fonts/OpenSans-BoldItalic.ttf');
+  src:url('../../assets/fonts/OpenSans-BoldItalic.ttf');
   font-style: italic;
   font-weight: bold;
 }
 @font-face {
   font-family: 'Open-Sans';
-  src:url('../assets/fonts/OpenSans-Light.ttf');
+  src:url('../../assets/fonts/OpenSans-Light.ttf');
   font-style: normal;
   font-weight: lighter;
 }
 @font-face {
   font-family: 'Open-Sans';
-  src:url('../assets/fonts/OpenSans-LightItalic.ttf');
+  src:url('../../assets/fonts/OpenSans-LightItalic.ttf');
   font-style: italic;
   font-weight: lighter;
 }
@@ -47,7 +47,7 @@ body{
 	width: 250px;
 	height: 150px;
 	z-index: 9999;
-	background: url('../assets/images/page-loader.gif') 50% 50% no-repeat;
+	background: url('../../assets/images/page-loader.gif') 50% 50% no-repeat;
   background-position: top center;
   background-size: contain;
   margin: 5px auto;
